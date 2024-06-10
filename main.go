@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/comcast/sql-validator/utils"
@@ -23,10 +22,5 @@ func main() {
 		panic(err.Error())
 	}
 
-	isValid := utils.CompareSQLValues(sqlData, txtData)
-	if !isValid {
-		fmt.Println("SQL values and the given values doesn't match")
-	} else {
-		fmt.Println("It's a valid SQL and values. You can proceed further !")
-	}
+	utils.CompareSQLValues(sqlData, txtData)
 }

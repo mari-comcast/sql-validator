@@ -26,5 +26,9 @@ func InterpretCommand(command []string) (schema.Command, error) {
 		}
 	}
 
+	if cmd.SqlFile == "" || cmd.TxtFile == "" {
+		return cmd, errors.New("empty sql file or value file given")
+	}
+
 	return cmd, nil
 }
